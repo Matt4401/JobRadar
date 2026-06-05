@@ -1,0 +1,10 @@
+[package]
+name = "scraper"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shared = { path = "../shared" }
+tokio = { version = "1.0", features = ["full"] }
+reqwest = "0.13.4"
+scraper = "0.27.0"
