@@ -1,0 +1,12 @@
+USE jobradar;
+
+CREATE TABLE IF NOT EXISTS job_offers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    company VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    url VARCHAR(500) NOT NULL UNIQUE,
+    description TEXT NOT NULL,
+    score INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
