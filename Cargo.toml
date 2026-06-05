@@ -1,6 +1,8 @@
+[workspace]
 members = [
     "shared",
     "scraper",
     "api"
 ]
+
 resolver = "2"
