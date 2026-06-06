@@ -1,6 +1,9 @@
 use sqlx::{mysql::MySqlPoolOptions, Executor, MySqlPool};
 use std::env;
 
+/// Encapsulates database connection and operations using sqlx for MySQL.
+/// This will be useful for our ORM layer to manage database interactions in a clean and efficient way.
+/// This struct provides methods to connect to the database, execute queries, and disconnect from the database.
 #[derive(Clone)]
 pub struct Database {
     pub(crate) pool: Option<MySqlPool>,
