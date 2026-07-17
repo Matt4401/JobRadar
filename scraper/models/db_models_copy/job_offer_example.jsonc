@@ -1,0 +1,19 @@
+// Here is an example of a fill job offer object that respect the initial job_offer struct.
+// All values present here are fictional and for demonstration purposes only.
+
+{
+  "id": 1042,
+  "title": "Développeur Rust Senior",
+  "description": "Recherche un développeur passionné par les systèmes distribués et la performance.",
+  "company": "Oxide Technologies",
+  "location": "Paris, France",
+  "url": "https://falselink.com/job/1042",
+  "score": 95,
+  "created_at": "2026-07-16T18:30:00",
+  "salary": "75k - 85k EUR",
+  "study_level": "Bac +5 ou équivalent",
+  "contract_type": "CDI",
+  "duration": null,
+  "remote": "Hybride (2 jours de présentiel)",
+  "experience_level": "Senior"
+}

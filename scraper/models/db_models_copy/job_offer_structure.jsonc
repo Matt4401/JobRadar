@@ -1,0 +1,18 @@
+// Here is the structure of a job offer in the database. The fields and their types are as follows:
+
+{
+  "id": "i32 (integer)",
+  "title": "String",
+  "description": "String",
+  "company": "String",
+  "location": "String",
+  "url": "String",
+  "score": "i32 (integer)",
+  "created_at": "NaiveDateTime (String au format YYYY-MM-DDTHH:MM:SS)",
+  "salary": "String | null",
+  "study_level": "String | null",
+  "contract_type": "String | null",
+  "duration": "String | null",
+  "remote": "String | null",
+  "experience_level": "String | null"
+}
