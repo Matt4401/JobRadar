@@ -1,0 +1,7 @@
+-- Application user: data manipulation only (SELECT/INSERT/UPDATE/DELETE).
+-- Used by the API and the scraper at runtime.
+CREATE USER IF NOT EXISTS '${JOBRADAR_APP_USER}'@'%' IDENTIFIED BY '${JOBRADAR_APP_PASSWORD}';
+GRANT SELECT, INSERT, UPDATE, DELETE
+    ON `${MYSQL_DATABASE}`.*
+    TO '${JOBRADAR_APP_USER}'@'%';
+FLUSH PRIVILEGES;
