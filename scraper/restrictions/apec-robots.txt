@@ -1,0 +1,10 @@
+# Robots.txt file 
+#
+# All robots will spider the domain
+
+Sitemap: https://www.apec.fr/sitemap_offres_search_engine.xml.gz
+Sitemap: https://www.apec.fr/sitemap_pages_entreprise.xml.gz
+Sitemap: https://www.apec.fr/sitemap_pages.xml.gz
+Sitemap: https://www.apec.fr/sitemap_seo4ajax.xml
+
+User-agent: *

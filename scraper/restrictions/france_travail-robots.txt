@@ -1,0 +1,37 @@
+User-agent: *
+
+Disallow: /mobiville/ville/*
+Disallow: /mobiville/villes?*
+
+Disallow: /allocations-et-aides/
+Disallow: *allocations-et-aides
+
+Disallow: /espacepersonnel/
+Disallow: /compte/
+
+Disallow: *JSESSIONID*
+Disallow: *jsessionid*
+
+Disallow: /offres/emploi:landingbuttongooglestore*
+Disallow: /offres/emploi:landingbuttonapplestore*
+Disallow: /offres/recherchesenregistrees
+Disallow: /offres/selection
+Disallow: /offres/emploi:redirection*
+Disallow: *motsCles=*
+Disallow: *t:ac=*
+Disallow: /candidat/situationadministrative/
+Disallow: /formations/comparateur
+Disallow: /formations/suivi
+Disallow: /formations/devis
+Disallow: /formations/recherchesenregistrees
+Disallow: /formations/recherche:clickconnectioncandidatboutonrechercheenreg*
+Disallow: /formations/recherche.voletdetail*
+Disallow: /formations/recherche.blocresultatrecherche*
+Disallow: /formations/detail.blocprendrerendezvous*
+Disallow: /formations/detail.blocdetails*
+
+
+Sitemap: https://candidat.francetravail.fr/rechercheoffre/sitemap/secteurs-metiers.xml
+Sitemap: https://candidat.francetravail.fr/rechercheoffre/sitemap/regions-departements-villes.xml
+Sitemap: https://candidat.francetravail.fr/rechercheoffre/sitemap/croisements-metiers-departements.xml
+Sitemap: https://candidat.francetravail.fr/rechercheoffre/sitemap/croisements-metiers-villes.xml
