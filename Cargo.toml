@@ -1,8 +1,9 @@
 [workspace]
 members = [
-    "shared",
+    "api",
     "scraper",
-    "api"
+    "db",
+    "shared",
 ]
 
 resolver = "2"
