@@ -28,3 +28,6 @@ rustc-ice-*.txt
 
 # Docker compose password
 .env
+
+# html files retrieve from sites
+output*.html
