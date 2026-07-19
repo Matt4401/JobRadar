@@ -1,0 +1,14 @@
+# List of job sites to scrape, multiple sites authorized
+# pick the sites you want to scrape in the list below :
+# hellowork, job_teaser,
+sites = ["hello_work"]
+
+# Active/deactivate log system
+log_system = false # not ready yet
+
+# Active/deactivate email system
+email_system = false # not ready yet
+
+# Active/deactivate scrapping errors crash
+# if activated, the scrapper will crash if an error occurs during scrapping else it will log the error and continue
+crash_on_scrapping_errors = false
