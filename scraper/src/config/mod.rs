@@ -1,1 +1,1 @@
-mod get_configs_files;
+pub mod get_configs_files;
