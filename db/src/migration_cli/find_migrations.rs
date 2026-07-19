@@ -1,5 +1,6 @@
 use std::fs;
 use std::path::{Path, PathBuf};
+use shared::workspace_root_join;
 
 pub(crate) struct Migration {
     pub(crate) version: String,
@@ -7,7 +8,7 @@ pub(crate) struct Migration {
 }
 
 pub fn migrations_dir() -> PathBuf {
-    Path::new(env!("CARGO_MANIFEST_DIR")).join("migrations")
+    workspace_root_join("migrations")
 }
 
 /// Reads the migrations directory and returns every `.sql` file paired with the
