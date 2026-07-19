@@ -5,3 +5,6 @@ pub mod workspace;
 
 pub use env::env::get_env_variable;
 pub use env::env::get_env_variables;
+
+pub use workspace::workspace::workspace_root;
+pub use workspace::workspace::workspace_root_join;
