@@ -3,7 +3,7 @@ pub const USER_AGENT: &str =
 
 pub fn http_client() -> Result<reqwest::Client, String> {
     reqwest::Client::builder()
-        .user_agent(crate::http::init_http_client::USER_AGENT)
+        .user_agent(crate::http_client::init_http_client::USER_AGENT)
         .build()
         .map_err(|e| format!("Error during HTTP client initialization: {e}"))
 }
