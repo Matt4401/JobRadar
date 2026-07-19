@@ -5,5 +5,5 @@ pub fn http_client() -> Result<reqwest::Client, String> {
     reqwest::Client::builder()
         .user_agent(crate::http::init_http_client::USER_AGENT)
         .build()
-        .map_err(|e| format!("Impossible de construire le client HTTP : {e}"))
+        .map_err(|e| format!("Error during HTTP client initialization: {e}"))
 }
