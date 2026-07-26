@@ -1,4 +1,4 @@
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use shared::workspace_root;
 
 pub fn get_config_file_path() -> PathBuf {
