@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS job_offers (
     location VARCHAR(255) NOT NULL,
     url VARCHAR(500) NOT NULL UNIQUE,
     score INT DEFAULT 0,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     -- Optional fields
     salary VARCHAR(50) NULL,
