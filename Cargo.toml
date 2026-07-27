@@ -4,6 +4,7 @@ members = [
     "scraper",
     "db",
     "shared",
+    "web",
 ]
 
 resolver = "2"
