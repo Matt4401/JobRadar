@@ -1,4 +1,4 @@
-use crate::parser::filters::filters::ScrapperFilters;
+use crate::parser::filters::match_filters::ScrapperFilters;
 use crate::http_client::init_http_client::http_client;
 use crate::parser::parser::SiteParser;
 use crate::parser::strategy::hello_work::parser_hello_work_json::HelloWorkParser;

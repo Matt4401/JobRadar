@@ -1,6 +1,6 @@
 use async_trait::async_trait;
 use db::models::job_offer::JobOffer;
-use crate::parser::filters::filters::ScrapperFilters;
+use crate::parser::filters::match_filters::ScrapperFilters;
 use crate::parser::strategy::hello_work::parser_hello_work_json::HelloWorkParser;
 
 #[async_trait]
