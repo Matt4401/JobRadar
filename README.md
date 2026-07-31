@@ -1,6 +1,10 @@
 <h1 align="center">JobRadar</h1>
 
 <p align="center">
+  <font color="red"><strong>Important: the entire organizational aspect of this project (issues and pull requests) is private and therefore invisible to anyone who is not a collaborator.</strong></font>
+</p>
+
+<p align="center">
   <strong>Self-hosted job-offer aggregator, written entirely in Rust.</strong><br>
   Targeted scraping of job boards, configurable filtering, MySQL storage and a lightweight web UI.
 </p>
