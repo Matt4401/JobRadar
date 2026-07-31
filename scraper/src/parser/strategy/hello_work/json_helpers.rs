@@ -1,11 +1,11 @@
 use serde_json::Value;
 
-/// Récupère un champ texte d'un objet JSON.
+/// Return the string value of the field `key` in the JSON object `v`, if it exists.
 pub(crate) fn str_field(v: &Value, key: &str) -> Option<String> {
     v.get(key)?.as_str().map(|s| s.to_string())
 }
 
-/// Renvoie le premier élément si `v` est un tableau, sinon `v` lui-même.
+/// Return the first element if `v` is an array, otherwise return `v` itself.
 pub fn first_item(v: &Value) -> &Value {
     match v.as_array() {
         Some(arr) => arr.first().unwrap_or(v),
@@ -13,7 +13,7 @@ pub fn first_item(v: &Value) -> &Value {
     }
 }
 
-/// `employmentType` peut être une chaîne ou un tableau de chaînes.
+/// `employmentType` can be a string or an array of strings.
 pub(crate) fn employment_type(v: &Value) -> Option<String> {
     match v {
         Value::String(s) => Some(s.clone()),
@@ -32,7 +32,7 @@ pub(crate) fn employment_type(v: &Value) -> Option<String> {
     }
 }
 
-/// Met en forme `baseSalary` (montant + devise + unité) en une chaîne lisible.
+/// Format `baseSalary` (amount + currency + unit) into a readable string.
 pub(crate) fn base_salary(v: &Value) -> Option<String> {
     let currency = v.get("currency").and_then(|c| c.as_str()).unwrap_or("");
     let amount = &v["value"];
