@@ -1,7 +1,9 @@
 <h1 align="center">JobRadar</h1>
 
 <p align="center">
-  $\textcolor{red}{\textbf{Important: the entire organizational aspect of this project (issues and pull requests) is private and therefore invisible to anyone who is not a collaborator.}}$
+  $\textcolor{red}{\textbf{Important: the entire organizational aspect of this project}}$<br>
+  $\textcolor{red}{\textbf{(issues and pull requests) is private and therefore}}$<br>
+  $\textcolor{red}{\textbf{invisible to anyone who is not a collaborator.}}$
 </p>
 
 <p align="center">
