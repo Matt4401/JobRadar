@@ -1,0 +1,24 @@
+#  Job Scraping Filters
+# Empty lists [] disable the corresponding filter.
+# Text matching is case-insensitive (substring match).
+
+# Max offers kept per site after filtering
+max_offers = 6
+
+# Job title must contain AT LEAST ONE keyword (empty = disable filter)
+job_keywords = ["développeur", "informatique", "logiciel", "data", "web", "software", "devops", "cybersécurité", "réseau", "IT"]
+
+# Company name must match AT LEAST ONE string (empty = accept all)
+companies = []
+
+# Location must match AT LEAST ONE string (empty = disable filter)
+locations = ["Nantes", "Loire-Atlantique", "44"]
+
+# Accepted schema.org employmentType values (FULL_TIME, TEMPORARY, INTERN, etc.)
+contract_types = ["INTERN", "TEMPORARY", "CONTRACTOR"]
+
+# Minimum gross salary (comment out or set to 0 to disable)
+# min_salary = 30000
+
+# Exclude offers without salary info (applies when min_salary is set)
+exclude_without_salary = false
