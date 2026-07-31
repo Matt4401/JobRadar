@@ -22,7 +22,7 @@ pub async fn parse_and_execute_query(
 }
 
 /// Returns the SQL string together with the ordered list of values to bind.
-pub(crate) fn build_sql_query(config: &QueryConfigs) -> Result<(String, Vec<String>), String> {
+pub fn build_sql_query(config: &QueryConfigs) -> Result<(String, Vec<String>), String> {
     validate_table(&config.table_name)?;
 
     let mut binds: Vec<String> = Vec::new();
