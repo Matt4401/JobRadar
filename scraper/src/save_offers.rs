@@ -11,7 +11,7 @@ pub async fn store_offers(db: &Database, offers: &[JobOffer]) -> Result<usize, S
          company = VALUES(company), location = VALUES(location), \
          salary = VALUES(salary), study_level = VALUES(study_level), \
          contract_type = VALUES(contract_type), duration = VALUES(duration), \
-         remote = VALUES(remote), experience_level = VALUES(experience_level)";
+         remote = VALUES(remote), experience_level = VALUES(experience_level)"; // a little to big for the ORM
 
     let mut stored = 0usize;
     for offer in offers {
