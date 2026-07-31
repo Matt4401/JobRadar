@@ -1,6 +1,6 @@
 # List of job sites to scrape, multiple sites authorized
 # pick the sites you want to scrape in the list below :
-# hellowork, job_teaser,
+# hello_work, job_teaser,
 sites = ["hello_work"]
 
 # Active/deactivate log system
