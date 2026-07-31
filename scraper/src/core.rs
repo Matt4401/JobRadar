@@ -1,6 +1,8 @@
 use db::connection::Database;
 use db::migration_cli::migration_cli::establish_connection;
 use db::models::job_offer::JobOffer;
+use db::orm::query_configs_builder::{OrderBy, QueryConfigs, QueryType, SortDirection};
+use db::orm::sql_query_builder::build_sql_query;
 use serde::Deserialize;
 use shared::get_html_from_url;
 
@@ -68,9 +70,21 @@ pub async fn scrape_all(filters: &ScrapperFilters) -> Vec<JobOffer> {
 }
 
 pub async fn fetch_stored_offers(db: &Database) -> Result<Vec<JobOffer>, String> {
-    let query = "SELECT * FROM job_offers ORDER BY created_at DESC";
+    let config = QueryConfigs::new(
+        "job_offers".to_string(),
+        QueryType::SELECT,
+        vec![],
+        None,
+        None,
+        Some(OrderBy {
+            column: "created_at".to_string(),
+            direction: SortDirection::Desc,
+        }),
+        None,
+    );
+    let (query, binds) = build_sql_query(&config)?;
 
-    db.fetch_all_as::<JobOffer>(query, &[])
+    db.fetch_all_as::<JobOffer>(&query, &binds)
         .await
         .map_err(|e| format!("Error fetching stored offers: {e}"))
 }
