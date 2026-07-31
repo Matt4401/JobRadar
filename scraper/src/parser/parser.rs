@@ -1,10 +1,11 @@
 use async_trait::async_trait;
 use db::models::job_offer::JobOffer;
-use crate::parser::strategy::hellowork::HelloWorkParser;
+use crate::filters::ScrapperFilters;
+use crate::parser::strategy::hello_work::parser_hello_work_json::HelloWorkParser;
 
 #[async_trait]
 pub trait SiteParser: Send + Sync {
-    async fn parse(&self, html: &str) -> Result<Vec<JobOffer>, String>;
+    async fn parse(&self, html: &str, filters: &ScrapperFilters) -> Result<Vec<JobOffer>, String>;
 }
 
 pub fn parser_factory(site_name: &str) -> Option<Box<dyn SiteParser>> {
