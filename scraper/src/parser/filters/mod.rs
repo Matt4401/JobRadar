@@ -1,2 +1,2 @@
 pub mod match_filters;
-mod update_filters;
+pub mod update_filters;
