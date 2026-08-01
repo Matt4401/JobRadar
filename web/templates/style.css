@@ -1,0 +1,126 @@
+:root {
+    --blue: #0b2e59;
+    --blue-light: #10457a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--blue);
+    margin-top: 0;
+}
+
+a {
+    color: var(--blue-light);
+}
+
+.actions {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+}
+
+button, .btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: .6rem 1.1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .btn:hover {
+    background: var(--blue-light);
+}
+
+.card {
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid var(--blue);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    margin: 0 0 .4rem;
+    font-size: 1.15rem;
+}
+
+.card h2 a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.card h2 a:hover {
+    text-decoration: underline;
+}
+
+.meta {
+    color: #475569;
+    font-size: .9rem;
+    margin: .15rem 0;
+}
+
+.tag {
+    display: inline-block;
+    background: #eaf1fb;
+    color: var(--blue);
+    border-radius: 4px;
+    padding: .1rem .5rem;
+    font-size: .8rem;
+    margin-right: .3rem;
+}
+
+.empty {
+    color: #64748b;
+}
+
+form {
+    max-width: 640px;
+}
+
+label {
+    display: block;
+    margin: 1rem 0 .3rem;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: .5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.hint {
+    font-weight: 400;
+    color: #64748b;
+    font-size: .8rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.checkbox label {
+    margin: 0;
+}
