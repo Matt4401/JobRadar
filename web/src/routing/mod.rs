@@ -1,2 +1,2 @@
 pub mod paths;
-mod router;
+pub mod router;

@@ -9,7 +9,7 @@ use axum::{
     Router,
 };
 
-async fn get_router(state: AppState) -> axum::Router {
+pub async fn get_router(state: AppState) -> axum::Router {
     Router::new()
         .route(ROOT_PATH, get(index))
         .route(RESCAN_PATH, post(rescan))
