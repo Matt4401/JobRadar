@@ -1,7 +1,4 @@
-use crate::{
-    state::AppState,
-    views::{FiltersTemplate, IndexTemplate},
-};
+use crate::{state::AppState, views::IndexTemplate};
 use askama::Template;
 use axum::{extract::State, http::StatusCode, response::Html, response::IntoResponse};
 

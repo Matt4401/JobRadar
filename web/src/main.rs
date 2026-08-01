@@ -5,7 +5,6 @@ mod views;
 
 use crate::routing::router::get_router;
 use db::migration_cli::migration_cli::establish_connection;
-use scraper::core::ScrapperConfig;
 use state::AppState;
 
 use serde::Deserialize;
