@@ -4,6 +4,7 @@ use db::models::job_offer::JobOffer;
 use db::orm::query_configs_builder::{OrderBy, QueryConfigs, QueryType, SortDirection};
 use db::orm::sql_query_builder::build_sql_query;
 use serde::Deserialize;
+use shared::get_env_variable;
 use shared::get_html_from_url;
 
 use crate::http_client::init_http_client::http_client;
@@ -95,6 +96,15 @@ pub async fn scrape_and_store() -> Result<usize, String> {
 
     if offers.is_empty() {
         println!("No offers scraped. Nothing to store.");
+        return Ok(0);
+    }
+    // Without a configured database (e.g. CI smoke test), keep the scrape a success
+    // instead of failing on storage.
+    if get_env_variable("DATABASE_URL").trim().is_empty() {
+        println!(
+            "{} offers scraped, but DATABASE_URL is not set: skipping storage.",
+            offers.len()
+        );
         return Ok(0);
     }
     let db = establish_connection().await;

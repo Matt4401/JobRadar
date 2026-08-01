@@ -36,8 +36,22 @@ jobs:
 
       - name: Test Run Scraper
         run: |
-          timeout 15s cargo run -p scraper || code=$?; [ $code -eq 124 ] || [ $code -eq 0 ]
+          code=0
+          timeout 15s cargo run -p scraper || code=$?
+          if [ "$code" -eq 124 ] || [ "$code" -eq 0 ]; then
+            echo "Scraper smoke test passed (exit $code)"
+          else
+            echo "Scraper smoke test failed (exit $code)"
+            exit 1
+          fi
 
       - name: Test Run Web
         run: |
-          timeout 10s cargo run -p web || code=$?; [ $code -eq 124 ] || [ $code -eq 0 ]
+          code=0
+          timeout 10s cargo run -p web || code=$?
+          if [ "$code" -eq 124 ] || [ "$code" -eq 0 ]; then
+            echo "Web smoke test passed (exit $code)"
+          else
+            echo "Web smoke test failed (exit $code)"
+            exit 1
+          fi
