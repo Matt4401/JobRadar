@@ -1,0 +1,43 @@
+name: Main CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  module-shared:
+    uses: ./.github/workflows/ci-shared.yml
+
+  module-db:
+    uses: ./.github/workflows/ci-db.yml
+
+  module-scraper:
+    uses: ./.github/workflows/ci-scraper.yml
+
+  module-web:
+    uses: ./.github/workflows/ci-web.yml
+
+  smoke-tests:
+    needs: [module-shared, module-db, module-scraper, module-web]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Build All Binaries
+        run: cargo build --workspace
+
+      - name: Test Run Scraper
+        run: |
+          timeout 15s cargo run -p scraper || code=$?; [ $code -eq 124 ] || [ $code -eq 0 ]
+
+      - name: Test Run Web
+        run: |
+          timeout 10s cargo run -p web || code=$?; [ $code -eq 124 ] || [ $code -eq 0 ]

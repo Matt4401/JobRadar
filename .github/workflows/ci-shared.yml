@@ -1,0 +1,27 @@
+name: Shared Module CI
+
+on:
+  workflow_call:
+
+jobs:
+  check-shared:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Format Check
+        run: cargo fmt --package shared --check
+
+      - name: Clippy Linter
+        run: cargo clippy --package shared --all-targets -- -D warnings
+
+      - name: Run Tests
+        run: cargo test --package shared
