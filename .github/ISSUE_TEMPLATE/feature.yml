@@ -1,0 +1,50 @@
+---
+name: Feature Request
+description: Propose a new feature or architectural change.
+labels: enhancement
+title: "[FEATURE] -"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        [FEATURE]
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is the description of the new feature?
+      placeholder: |
+        Implement a unified event loop...
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Target Component
+      options:
+        - Server
+        - AI / Client
+        - GUI
+        - Core / Shared
+        - Build System
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: What are the specific requirements and constraints?
+      value: |
+        * The new feature **must** be covered by unit tests.
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation
+      description: How should the feature be implemented?
+      placeholder: |
+        * The class should use std::unique_ptr for ownership.
+        * It needs to integrate into the main execution loop.
+    validations:
+      required: true
