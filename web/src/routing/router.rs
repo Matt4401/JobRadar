@@ -2,6 +2,7 @@ use crate::handler::get_filters::filters_page;
 use crate::handler::index::index;
 use crate::handler::rescan::rescan;
 use crate::handler::update_filters::update_filters;
+use crate::routing::paths::{FILTERS_PATH, RESCAN_PATH, ROOT_PATH};
 use crate::state::AppState;
 use axum::{
     routing::{get, post},
