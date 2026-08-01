@@ -94,7 +94,7 @@ pub async fn run_migrations(
         let script = fs::read_to_string(&migration.path).map_err(|e| {
             sqlx::Error::Protocol(format!("Cannot read {}: {e}", migration.path.display()))
         })?;
-        
+
         if script.trim().is_empty() {
             println!(
                 "Migration {} is empty, skipping execution.",

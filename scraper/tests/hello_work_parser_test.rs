@@ -68,12 +68,18 @@ fn json_ld_to_offer_maps_all_fields() {
     assert_eq!(offer.description, "Nice mission");
     assert_eq!(offer.company, "ACME");
     assert_eq!(offer.location, "Nantes, Pays de la Loire");
-    assert_eq!(offer.url, "https://www.hellowork.com/fr-fr/emplois/123.html");
+    assert_eq!(
+        offer.url,
+        "https://www.hellowork.com/fr-fr/emplois/123.html"
+    );
     assert_eq!(offer.contract_type, Some("INTERN, FULL_TIME".to_string()));
     assert_eq!(offer.salary, Some("35000 EUR / YEAR".to_string()));
     assert_eq!(offer.study_level, Some("bac+5".to_string()));
     assert_eq!(offer.experience_level, Some("1 year".to_string()));
-    assert_eq!(offer.created_at.format("%Y-%m-%d").to_string(), "2026-07-15");
+    assert_eq!(
+        offer.created_at.format("%Y-%m-%d").to_string(),
+        "2026-07-15"
+    );
 }
 
 #[test]

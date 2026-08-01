@@ -15,8 +15,6 @@ pub static HELLO_WORK_URL: &str = "https://www.hellowork.com";
 static HELLO_WORK_LISTING_URL: &str =
     "https://www.hellowork.com/fr-fr/alternance/metier_developpeur-ville_nantes-44000.html";
 
-
-
 static LINKEDIN_URL: &str = "https://www.linkedin.com/jobs/search/?keywords=developpeur";
 
 static FRANCE_TRAVAIL_URL: &str = "https://candidat.francetravail.fr/offres/recherche";

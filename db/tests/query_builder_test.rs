@@ -129,7 +129,10 @@ fn insert_builds_columns_and_placeholders() {
         None,
     ))
     .unwrap();
-    assert_eq!(query, "INSERT INTO job_offers (title, company) VALUES (?, ?)");
+    assert_eq!(
+        query,
+        "INSERT INTO job_offers (title, company) VALUES (?, ?)"
+    );
     assert_eq!(binds, vec!["Dev".to_string(), "ACME".to_string()]);
 }
 

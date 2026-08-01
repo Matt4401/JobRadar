@@ -14,7 +14,11 @@ struct Sample {
 // Returns a unique temporary file path scoped to this test process.
 fn temp_path(label: &str) -> PathBuf {
     let mut p = std::env::temp_dir();
-    p.push(format!("jobradar_toml_{}_{}.toml", label, std::process::id()));
+    p.push(format!(
+        "jobradar_toml_{}_{}.toml",
+        label,
+        std::process::id()
+    ));
     p
 }
 

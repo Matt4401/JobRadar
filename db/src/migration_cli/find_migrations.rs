@@ -1,6 +1,6 @@
+use shared::workspace_root_join;
 use std::fs;
 use std::path::PathBuf;
-use shared::workspace_root_join;
 
 pub(crate) struct Migration {
     pub(crate) version: String,

@@ -1,7 +1,7 @@
-use async_trait::async_trait;
-use db::models::job_offer::JobOffer;
 use crate::parser::filters::match_filters::ScrapperFilters;
 use crate::parser::strategy::hello_work::parser_hello_work_json::HelloWorkParser;
+use async_trait::async_trait;
+use db::models::job_offer::JobOffer;
 
 #[async_trait]
 pub trait SiteParser: Send + Sync {
