@@ -1,6 +1,5 @@
 [workspace]
 members = [
-    "api",
     "scraper",
     "db",
     "shared",
