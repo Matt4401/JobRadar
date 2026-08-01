@@ -1,1 +1,1 @@
-pub(crate) mod workspace;
+pub mod workspace;
