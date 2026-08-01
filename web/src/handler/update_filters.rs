@@ -1,4 +1,3 @@
-use crate::FiltersForm;
 use axum::response::{IntoResponse, Redirect};
 use axum::Form;
 use scraper::parser::filters::match_filters::ScrapperFilters;
