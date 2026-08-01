@@ -3,7 +3,7 @@ use axum::response::{IntoResponse, Redirect};
 use axum::Form;
 use scraper::parser::filters::match_filters::ScrapperFilters;
 
-async fn update_filters(Form(form): Form<FiltersForm>) -> impl IntoResponse {
+pub async fn update_filters(Form(form): Form<FiltersForm>) -> impl IntoResponse {
     let filters = ScrapperFilters {
         max_offers: form.max_offers.trim().parse().unwrap_or(6),
         job_keywords: split_list(&form.job_keywords),
