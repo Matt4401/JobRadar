@@ -1,7 +1,15 @@
-use crate::{split_list, FiltersForm};
+use crate::FiltersForm;
 use axum::response::{IntoResponse, Redirect};
 use axum::Form;
 use scraper::parser::filters::match_filters::ScrapperFilters;
+
+fn split_list(raw: &str) -> Vec<String> {
+    raw.split(',')
+        .map(str::trim)
+        .filter(|s| !s.is_empty())
+        .map(String::from)
+        .collect()
+}
 
 pub async fn update_filters(Form(form): Form<FiltersForm>) -> impl IntoResponse {
     let filters = ScrapperFilters {
