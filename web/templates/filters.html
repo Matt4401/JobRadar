@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}JobRadar — Filtres{% endblock %}
+
+{% block content %}
+<h1>JobRadar — Filtres</h1>
+<p><a href="/">&larr; Retour aux offres</a></p>
+<form method="post" action="/filters">
+    <label>Nombre maximum d'offres</label>
+    <input type="number" name="max_offers" min="1" value="{{ filters.max_offers }}">
+
+    <label>Mots-clés du poste <span class="hint">(séparés par des virgules)</span></label>
+    <input type="text" name="job_keywords" value="{{ filters.job_keywords.join(" , ") }}">
+
+    <label>Entreprises <span class="hint">(séparées par des virgules)</span></label>
+    <input type="text" name="companies" value="{{ filters.companies.join(" , ") }}">
+
+    <label>Localisations <span class="hint">(séparées par des virgules)</span></label>
+    <input type="text" name="locations" value="{{ filters.locations.join(" , ") }}">
+
+    <label>Types de contrat <span class="hint">(INTERN, TEMPORARY, FULL_TIME...)</span></label>
+    <input type="text" name="contract_types" value="{{ filters.contract_types.join(" , ") }}">
+
+    <label>Salaire minimum <span class="hint">(vide = pas de filtre)</span></label>
+    <input type="text" name="min_salary" value="{{ min_salary_str }}">
+
+    <div class="checkbox">
+        <input type="checkbox" id="ews" name="exclude_without_salary" {% if filters.exclude_without_salary %}checked{%
+               endif %}>
+        <label for="ews">Exclure les offres sans salaire</label>
+    </div>
+
+    <p style="margin-top:1.5rem">
+        <button type="submit">Enregistrer les filtres</button>
+    </p>
+</form>
+{% endblock %}
