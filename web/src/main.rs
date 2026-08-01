@@ -10,6 +10,7 @@ use state::AppState;
 
 use serde::Deserialize;
 use shared::toml::toml_interactions::TomlHelper;
+use shared::workspace::workspace::workspace_root;
 
 #[derive(Deserialize)]
 pub struct AxumConfig {
@@ -17,7 +18,7 @@ pub struct AxumConfig {
 }
 
 pub fn load_config() -> Result<AxumConfig, String> {
-    TomlHelper::new("axum_config.toml").read()
+    TomlHelper::new(workspace_root().join("web/src/axum_configs.toml")).read()
 }
 
 #[tokio::main]
