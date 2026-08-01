@@ -30,6 +30,6 @@ async fn main() {
     let port_copy = addr.clone();
     let listener = tokio::net::TcpListener::bind(addr).await.unwrap();
 
-    println!("Job Scraper web server running on http://{}", port_copy);
+    println!("Job Scraper web server running on http://{port_copy}");
     axum::serve(listener, app).await.unwrap();
 }

@@ -17,14 +17,14 @@ pub async fn run_migration_cli() {
         Ok(Some(history)) => Some(history.version),
         Ok(None) => None,
         Err(e) => {
-            eprintln!("Error fetching migration history: {}", e);
+            eprintln!("Error fetching migration history: {e}");
             None
         }
     };
 
     if last_version.is_none() {
         if let Err(e) = create_tables(&db).await {
-            eprintln!("Failed to create tables: {}", e);
+            eprintln!("Failed to create tables: {e}");
             return;
         }
         last_version = match get_history(&db).await {
@@ -34,7 +34,7 @@ pub async fn run_migration_cli() {
     }
 
     if let Err(e) = run_migrations(&db, last_version).await {
-        eprintln!("Migration run failed: {}", e);
+        eprintln!("Migration run failed: {e}");
     }
 }
 
@@ -44,7 +44,7 @@ pub async fn establish_connection() -> Database {
 
     match db.connect().await {
         Ok(_) => println!("Database connection established successfully."),
-        Err(e) => println!("Error establishing database connection: {}", e),
+        Err(e) => println!("Error establishing database connection: {e}"),
     }
     db
 }
@@ -110,12 +110,3 @@ pub async fn run_migrations(
 
     Ok(())
 }
-
-// all first job :
-// connection
-// recuperation des histories
-// users verifications
-// creation db
-// creation tables
-
-// all about update thanks to migrationsScript

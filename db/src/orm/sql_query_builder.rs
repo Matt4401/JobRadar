@@ -16,7 +16,7 @@ pub async fn parse_and_execute_query(
     let execution_result = db.execute_query(&query, &binds).await;
     match &execution_result {
         Ok(()) => println!("The request was executed successfully."),
-        Err(e) => eprintln!("Error during request execution : {}", e),
+        Err(e) => eprintln!("Error during request execution : {e}"),
     }
     execution_result
 }
@@ -167,7 +167,7 @@ fn add_limit(mut query: String, config: &QueryConfigs) -> String {
         return query;
     }
     if let Some(limit) = config.limit {
-        query.push_str(&format!(" LIMIT {}", limit));
+        query.push_str(&format!(" LIMIT {limit}"));
     }
     query
 }

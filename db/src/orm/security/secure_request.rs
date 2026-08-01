@@ -62,8 +62,7 @@ pub fn detect_suspicious_patterns(query: &str) -> Result<(), String> {
     for pattern in danger_patterns {
         if upper.contains(&pattern.to_uppercase()) {
             return Err(format!(
-                "Suspected SQL injection pattern detected: {}",
-                pattern
+                "Suspected SQL injection pattern detected: {pattern}"
             ));
         }
     }

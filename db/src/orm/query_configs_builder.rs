@@ -58,13 +58,13 @@ pub struct QueryConfigs {
 #[allow(dead_code)]
 #[derive(Debug, Clone)]
 pub enum TableModel {
-    Job(JobOffer),
+    Job(Box<JobOffer>),
     Migration(MigrationsHistory),
 }
 
 static STRUCT_FROM_TABLE: LazyLock<HashMap<&'static str, TableModel>> = LazyLock::new(|| {
     let mut m = HashMap::new();
-    m.insert(JobOffer::TABLE, TableModel::Job(JobOffer::default()));
+    m.insert(JobOffer::TABLE, TableModel::Job(Box::default()));
     m.insert(
         MigrationsHistory::TABLE,
         TableModel::Migration(MigrationsHistory::default()),
