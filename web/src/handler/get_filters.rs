@@ -1,10 +1,6 @@
-use crate::render_filters;
-use crate::{
-    state::AppState,
-    views::{FiltersTemplate, IndexTemplate},
-};
+use crate::views::FiltersTemplate;
 use askama::Template;
-use axum::{extract::State, http::StatusCode, response::Html, response::IntoResponse};
+use axum::{http::StatusCode, response::Html, response::IntoResponse};
 
 pub async fn filters_page() -> impl IntoResponse {
     let filters = scraper::parser::filters::update_filters::load_filters();
