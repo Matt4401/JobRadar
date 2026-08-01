@@ -2,6 +2,7 @@
 name = "web"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/Matt4401/JobRadar"
 
 [dependencies]
 db = { path = "../db" }
