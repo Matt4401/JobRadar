@@ -9,13 +9,10 @@ use std::env;
 pub fn get_env_variable(key: &str) -> String {
     dotenvy::dotenv().ok();
 
-    match env::var(key) {
-        Ok(val) => val,
-        Err(e) => {
-            println!("Error {}: {}", key, e);
-            String::new()
-        }
-    }
+    env::var(key).unwrap_or_else(|e| {
+        println!("Error {key}: {e}");
+        String::new()
+    })
 }
 
 /// Get multiple environment variables by their keys and return a HashMap of key-value pairs.
@@ -28,13 +25,13 @@ pub fn get_env_variables(vec: Vec<&str>) -> HashMap<String, String> {
     let mut env_variables = HashMap::new();
 
     for key in vec {
-        let value = env::var(&key);
+        let value = env::var(key);
         match value {
             Ok(val) => {
-                println!("{}: {:?}", key, val);
+                println!("{key}: {val:?}");
                 env_variables.insert(key.to_string(), val);
             }
-            Err(e) => println!("Error {}: {}", key, e),
+            Err(e) => println!("Error {key}: {e}"),
         };
     }
     env_variables

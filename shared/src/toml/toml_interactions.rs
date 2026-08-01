@@ -34,12 +34,12 @@ impl TomlHelper {
         T: Serialize,
     {
         let toml_string = toml::to_string_pretty(data)
-            .map_err(|e| format!("Erreur de sérialisation TOML : {}", e))?;
+            .map_err(|e| format!("Error of TOML serialization: {:?}: {}", self.file_path, e))?;
         let mut file = File::create(&self.file_path)
-            .map_err(|e| format!("Impossible de créer le fichier {:?}: {}", self.file_path, e))?;
+            .map_err(|e| format!("Impossible to create file {:?}: {}", self.file_path, e))?;
 
         file.write_all(toml_string.as_bytes())
-            .map_err(|e| format!("Erreur d'écriture dans {:?}: {}", self.file_path, e))?;
+            .map_err(|e| format!("Error writing to file {:?}: {}", self.file_path, e))?;
         Ok(())
     }
 
