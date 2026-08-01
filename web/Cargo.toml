@@ -10,3 +10,4 @@ scraper = { path = "../scraper" }
 tokio = { version = "1", features = ["full"] }
 axum = "0.8.9"
 serde = { version = "1.0", features = ["derive"] }
+askama = "0.16.0"
