@@ -14,7 +14,7 @@ impl HelloWorkParser {
     }
 
     /// Extract all unique offer paths from the listing page HTML.
-    pub(crate) fn extract_offer_paths(html: &str) -> Vec<String> {
+    pub fn extract_offer_paths(html: &str) -> Vec<String> {
         let re = Regex::new(r"/fr-fr/emplois/\d+[a-z0-9._-]*\.html").unwrap();
         let mut seen: Vec<String> = Vec::new();
         for m in re.find_iter(html) {
@@ -27,7 +27,7 @@ impl HelloWorkParser {
     }
 
     /// Extract all JSON-LD blocks from the HTML and parse them into `serde_json::Value`.
-    pub(crate) fn json_ld_blocks(html: &str) -> Vec<Value> {
+    pub fn json_ld_blocks(html: &str) -> Vec<Value> {
         let re = Regex::new(r#"(?s)<script type="application/ld\+json">(.*?)</script>"#).unwrap();
         re.captures_iter(html)
             .filter_map(|c| serde_json::from_str::<Value>(c[1].trim()).ok())
@@ -35,7 +35,7 @@ impl HelloWorkParser {
     }
 
     /// Convert a JSON-LD `JobPosting` object into a `JobOffer`.
-    pub(crate) fn json_ld_to_offer(job: &Value) -> JobOffer {
+    pub fn json_ld_to_offer(job: &Value) -> JobOffer {
         let title = str_field(job, "title").unwrap_or_default();
         let description = str_field(job, "description").unwrap_or_default();
         let url = str_field(job, "url").unwrap_or_default();
