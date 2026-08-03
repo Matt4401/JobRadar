@@ -63,5 +63,3 @@ jobs:
       - name: Deploy application
         run: npm run deploy
 ```
-
-Note that this is a basic example and can be customized based on the specific requirements of your project. You may need to add additional steps or modify existing ones to fit your workflow.
